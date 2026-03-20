@@ -4,14 +4,18 @@ import { useEffect, useState } from "react";
 function App() {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+
 
 
   const fetchProducts = async () => {
-    const res = await fetch("https://dummyjson.com/products?limit=100");
+    const res = await fetch("https://dummyjson.com/products?limit=120&skip=10&select=title,price,thumbnail");
     const data = await res.json();
+    console.log(data);
 
     if (data && data.products) {
       setProducts(data.products);
+      setTotalPages(data.total / 10)
 
     }
 
@@ -45,7 +49,9 @@ function App() {
         )}
         {
           products.length > 0 && <div className="pagination">
-            <span onClick={() => selectPageHandler(page - 1)} >👈</span>
+            <span
+              className={page > 1 ? "" : "pagination__disable"}
+              onClick={() => selectPageHandler(page - 1)} >👈</span>
             {[...Array(products.length / 10)].map((_, i) => {
               return (
                 <span

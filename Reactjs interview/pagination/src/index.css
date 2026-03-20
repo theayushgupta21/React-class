@@ -254,3 +254,7 @@ body {
     height: 170px;
   }
 }
+
+.pagination__disable {
+  opacity: 0;
+}
