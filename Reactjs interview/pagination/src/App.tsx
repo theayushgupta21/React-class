@@ -65,7 +65,11 @@ function App() {
               className={page < products.length / 10 ? "" : "pagination__disable"}
             >👉</span>
           </div>
+
         }
+        <div>
+
+        </div>
 
 
       </div>

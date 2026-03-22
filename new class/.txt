@@ -1,2 +1,12 @@
-start & text 
+next class ( routing & middleware)
 
+:- Express.js framework
+:- Introduction to Express.js
+express js ek NPM package hai 
+framework-> 
+
+:- Setting uo a basic express application.
+:- routing
+:- middleware
+:- Request and response handling 
+:- Error handling

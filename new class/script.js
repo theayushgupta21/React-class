@@ -11,4 +11,8 @@
 
 //scripts- understanding default scripts Path and coustom sripts
 
-console.log("hello"); 
+const fs = require('fs');
+
+// File padhna aur print karna
+const content = fs.readFileSync('.txt', 'utf8');
+console.log(content);
